@@ -5,8 +5,8 @@
 class MoveVector{
     public:
         std::vector<std::vector<int>> moveMatrixUpFunc(std::vector<std::vector<int>> vectorMain, int vectorMainHeight, int vectorMainLength){
-            for (int i = 0; i < vectorMainLength - 1; i++){
-                for (int j = 0; j < vectorMainHeight; j++){
+            for (int i = 0; i < vectorMainHeight - 1; i++){
+                for (int j = 0; j < vectorMainLength; j++){
                     if (i == vectorMainHeight){
                         std::swap(vectorMain[i][j], vectorMain[0][j]);
                     } else{
