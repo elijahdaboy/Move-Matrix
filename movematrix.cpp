@@ -4,15 +4,26 @@
 // vector must have even rows
 class MoveVector{
     public:
-        std::vector<std::vector<int>> moveMatrixUpFunc(std::vector<std::vector<int>> vectorMain, int vectorMainHeight, int vectorMainLength){
-            int j;
+        std::vector<std::vector<int>> moveMatrixUpFunc(std::vector<std::vector<int>> vectorMain, int vectorMainHeight){
             
             for (int i = 0; i < vectorMainHeight - 1; i++){
-                for (int j = 0; j < vectorMainLength; j++){
+                for (int j = 0; j < vectorMain[i].size(); j++){
                     if (i != 0){
-                        std::swap(vectorMain[i][j], vectorMain[i - 1][j]);
+                        if (vectorMain[i].size() == vectorMain[i - 1].size()){
+                            if (i != 0){
+                            std::swap(vectorMain[i][j], vectorMain[i - 1][j]);
+                            } else{
+                                std::swap(vectorMain[0][j], vectorMain[vectorMainHeight - 1][j]);
+                            }
+                        }
                     } else{
-                        std::swap(vectorMain[0][j], vectorMain[vectorMainHeight - 1][j]);
+                        if (vectorMain[i].size() == vectorMain[vectorMain.size() - 1].size()){
+                            if (i != 0){
+                                std::swap(vectorMain[i][j], vectorMain[i - 1][j]);
+                            } else{
+                                std::swap(vectorMain[0][j], vectorMain[vectorMainHeight - 1][j]);
+                            }
+                        }
                     }
                 }
             }
@@ -20,7 +31,7 @@ class MoveVector{
             return vectorMain;
         }
     
-        std::vector<std::vector<int>> moveMatrixDownFunc(std::vector<std::vector<int>> vectorMain, int vectorMainHeight, int vectorMainLength){
+        std::vector<std::vector<int>> moveMatrixDownFunc(std::vector<std::vector<int>> vectorMain, int vectorMainHeight){
             
             return vectorMain;
         }
@@ -34,9 +45,9 @@ int main(){
         {5, 6, 7, 8},
         {9, 10, 11, 12},
         {13, 14, 15, 16},
+        {10, 20, 30, 40, 50, 60}
     };
     int vectorMainHeight = vectorMain.size();
-    int vectorMainLength = vectorMain[0].size();
     
     while (true){
         std::cout << "What would you like to do?\n1: Move vector up\n2: Move vector down\n(1, 2): ";
@@ -44,7 +55,7 @@ int main(){
         
         if (currUserInput == "1"){
             std::cout << '\n';
-            vectorMain = MoveVectorObj.moveMatrixUpFunc(vectorMain, vectorMainHeight, vectorMainLength);
+            vectorMain = MoveVectorObj.moveMatrixUpFunc(vectorMain, vectorMainHeight);
             for (int i = 0; i < vectorMain.size(); i++){
                 for (int j = 0; j < vectorMain[i].size(); j++){
                     std::cout << vectorMain[i][j] << ' ';
@@ -54,7 +65,7 @@ int main(){
             std::cout << '\n';
         } else if (currUserInput == "2"){
             std::cout << '\n';
-            vectorMain = MoveVectorObj.moveMatrixDownFunc(vectorMain, vectorMainHeight, vectorMainLength);
+            vectorMain = MoveVectorObj.moveMatrixDownFunc(vectorMain, vectorMainHeight);
             for (int i = 0; i < vectorMain.size(); i++){
                 for (int j = 0; j < vectorMain[i].size(); j++){
                     std::cout << vectorMain[i][j] << ' ';
