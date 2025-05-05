@@ -19,15 +19,6 @@ class MoveVector{
         }
     
         std::vector<std::vector<int>> moveMatrixDownFunc(std::vector<std::vector<int>> vectorMain, int vectorMainHeight, int vectorMainLength){
-            for (int i = 0; i < vectorMainLength - 1; i++){
-                for (int j = 0; j < vectorMainHeight; j++){
-                    if (i == 0){
-                        std::swap(vectorMain[i][j], vectorMain[vectorMainLength - 1][j]);
-                    } else{
-                        std::swap(vectorMain[i][j], vectorMain[i + 1][j]);
-                    }
-                }
-            }
             
             return vectorMain;
         }
