@@ -1,16 +1,18 @@
 #include <iostream>
 #include <vector>
 
-// vector must be a square
+// vector must have even rows
 class MoveVector{
     public:
         std::vector<std::vector<int>> moveMatrixUpFunc(std::vector<std::vector<int>> vectorMain, int vectorMainHeight, int vectorMainLength){
+            int j;
+            
             for (int i = 0; i < vectorMainHeight - 1; i++){
                 for (int j = 0; j < vectorMainLength; j++){
-                    if (i == vectorMainHeight){
-                        std::swap(vectorMain[i][j], vectorMain[0][j]);
+                    if (i != 0){
+                        std::swap(vectorMain[i][j], vectorMain[i - 1][j]);
                     } else{
-                        std::swap(vectorMain[i][j], vectorMain[i + 1][j]);
+                        std::swap(vectorMain[0][j], vectorMain[vectorMainHeight - 1][j]);
                     }
                 }
             }
@@ -31,7 +33,7 @@ int main(){
         {1, 2, 3, 4},
         {5, 6, 7, 8},
         {9, 10, 11, 12},
-        {13, 14, 15, 16}
+        {13, 14, 15, 16},
     };
     int vectorMainHeight = vectorMain.size();
     int vectorMainLength = vectorMain[0].size();
