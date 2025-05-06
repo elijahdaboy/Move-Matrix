@@ -30,12 +30,12 @@ class MoveVector{
         
         std::vector<std::vector<int>> moveMatrixLeftFunc(std::vector<std::vector<int>> vectorMain, int vectorMainHeight, int vectorMainLength){
             
-            return vectorMain();
+            return vectorMain;
         }
         
         std::vector<std::vector<int>> moveMatrixRightFunc(std::vector<std::vector<int>> vectorMain, int vectorMainHeight, int vectorMainLength){
             
-            return vectorMain();
+            return vectorMain;
         }
 };
 
@@ -60,7 +60,7 @@ int main(){
     std::cout << '\n';
     
     while (true){
-        std::cout << "What would you like to do?\n1: Move vector up\n2: Move vector down\n(1, 2): ";
+        std::cout << "What would you like to do?\n1: Move vector up\n2: Move vector down\n3: Move vector left\n4: Move vector right\n(1, 2, 3, 4): ";
         std::cin >> currUserInput;
         
         if (currUserInput == "1"){
@@ -76,6 +76,26 @@ int main(){
         } else if (currUserInput == "2"){
             std::cout << '\n';
             vectorMain = MoveVectorObj.moveMatrixDownFunc(vectorMain, vectorMainHeight, vectorMainLength);
+            for (int i = 0; i < vectorMain.size(); i++){
+                for (int j = 0; j < vectorMain[i].size(); j++){
+                    std::cout << vectorMain[i][j] << ' ';
+                }
+                std::cout << '\n';
+            }
+            std::cout << '\n';
+        } else if (currUserInput == "3"){
+            std::cout << '\n';
+            vectorMain = MoveVectorObj.moveMatrixLeftFunc(vectorMain, vectorMainHeight, vectorMainLength);
+            for (int i = 0; i < vectorMain.size(); i++){
+                for (int j = 0; j < vectorMain[i].size(); j++){
+                    std::cout << vectorMain[i][j] << ' ';
+                }
+                std::cout << '\n';
+            }
+            std::cout << '\n';
+        } else if (currUserInput == "4"){
+            std::cout << '\n';
+            vectorMain = MoveVectorObj.moveMatrixRightFunc(vectorMain, vectorMainHeight, vectorMainLength);
             for (int i = 0; i < vectorMain.size(); i++){
                 for (int j = 0; j < vectorMain[i].size(); j++){
                     std::cout << vectorMain[i][j] << ' ';
