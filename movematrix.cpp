@@ -27,6 +27,16 @@ class MoveVector{
             
             return vectorMain;
         }
+        
+        std::vector<std::vector<int>> moveMatrixLeftFunc(std::vector<std::vector<int>> vectorMain, int vectorMainHeight, int vectorMainLength){
+            
+            return vectorMain();
+        }
+        
+        std::vector<std::vector<int>> moveMatrixRightFunc(std::vector<std::vector<int>> vectorMain, int vectorMainHeight, int vectorMainLength){
+            
+            return vectorMain();
+        }
 };
 
 int main(){
