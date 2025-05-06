@@ -38,9 +38,16 @@ int main(){
         {9, 10, 11, 12},
         {13, 14, 15, 16}
     };
-    
     int vectorMainHeight = vectorMain.size();
     int vectorMainLength = vectorMain[0].size();
+    
+    for (int i = 0; i < vectorMainHeight; i++){
+        for (int j = 0; j < vectorMainLength; j++){
+            std::cout << vectorMain[i][j] << ' ';
+        }
+        std::cout << '\n';
+    }
+    std::cout << '\n';
     
     while (true){
         std::cout << "What would you like to do?\n1: Move vector up\n2: Move vector down\n(1, 2): ";
