@@ -43,6 +43,15 @@ class MoveVector{
         }
         
         std::vector<std::vector<int>> moveMatrixRightFunc(std::vector<std::vector<int>> vectorMain, int vectorMainHeight, int vectorMainLength){
+            for (int i = vectorMainHeight - 1; i >= 0; i--){
+                for (int j = vectorMainLength - 1; j > 0; j--){
+                    if (j != vectorMainLength - 1){
+                        std::swap(vectorMain[i][j], vectorMain[i][j + 1]);
+                    } else{
+                        std::swap(vectorMain[i][0], vectorMain[i][vectorMainLength - 1]);
+                    }
+                }
+            }
             
             return vectorMain;
         }
