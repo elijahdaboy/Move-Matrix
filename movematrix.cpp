@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-// vector must have even rows
+// matrix must have even rows
 class MoveVector{
     public:
         std::vector<std::vector<int>> moveMatrixUpFunc(std::vector<std::vector<int>> vectorMain, int vectorMainHeight, int vectorMainLength){
@@ -80,13 +80,8 @@ int main(){
     int vectorMainHeight = vectorMain.size();
     int vectorMainLength = vectorMain[0].size();
     
-    for (int i = 0; i < vectorMainHeight; i++){
-        for (int j = 0; j < vectorMainLength; j++){
-            std::cout << vectorMain[i][j] << ' ';
-        }
-        std::cout << '\n';
-    }
-    std::cout << '\n';
+    std::cout << "********************MOVE MATRIX********************\n";
+    printFunc(vectorMain);
     
     while (true){
         std::cout << "What would you like to do?\n1: Move vector up\n2: Move vector down\n3: Move vector left\n4: Move vector right\n(1, 2, 3, 4): ";
