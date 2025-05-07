@@ -57,6 +57,17 @@ class MoveVector{
         }
 };
 
+void printFunc(std::vector<std::vector<int>> vectorMain){
+    std::cout << '\n';
+    for (int i = 0; i < vectorMain.size(); i++){
+        for (int j = 0; j < vectorMain[i].size(); j++){
+            std::cout << vectorMain[i][j] << ' ';
+        }
+        std::cout << '\n';
+    }
+    std::cout << '\n';
+}
+
 int main(){
     MoveVector MoveVectorObj;
     std::string currUserInput;
@@ -82,45 +93,17 @@ int main(){
         std::cin >> currUserInput;
         
         if (currUserInput == "1"){
-            std::cout << '\n';
             vectorMain = MoveVectorObj.moveMatrixUpFunc(vectorMain, vectorMainHeight, vectorMainLength);
-            for (int i = 0; i < vectorMain.size(); i++){
-                for (int j = 0; j < vectorMain[i].size(); j++){
-                    std::cout << vectorMain[i][j] << ' ';
-                }
-                std::cout << '\n';
-            }
-            std::cout << '\n';
+            printFunc(vectorMain);
         } else if (currUserInput == "2"){
-            std::cout << '\n';
             vectorMain = MoveVectorObj.moveMatrixDownFunc(vectorMain, vectorMainHeight, vectorMainLength);
-            for (int i = 0; i < vectorMain.size(); i++){
-                for (int j = 0; j < vectorMain[i].size(); j++){
-                    std::cout << vectorMain[i][j] << ' ';
-                }
-                std::cout << '\n';
-            }
-            std::cout << '\n';
+            printFunc(vectorMain);
         } else if (currUserInput == "3"){
-            std::cout << '\n';
             vectorMain = MoveVectorObj.moveMatrixLeftFunc(vectorMain, vectorMainHeight, vectorMainLength);
-            for (int i = 0; i < vectorMain.size(); i++){
-                for (int j = 0; j < vectorMain[i].size(); j++){
-                    std::cout << vectorMain[i][j] << ' ';
-                }
-                std::cout << '\n';
-            }
-            std::cout << '\n';
+            printFunc(vectorMain);
         } else if (currUserInput == "4"){
-            std::cout << '\n';
             vectorMain = MoveVectorObj.moveMatrixRightFunc(vectorMain, vectorMainHeight, vectorMainLength);
-            for (int i = 0; i < vectorMain.size(); i++){
-                for (int j = 0; j < vectorMain[i].size(); j++){
-                    std::cout << vectorMain[i][j] << ' ';
-                }
-                std::cout << '\n';
-            }
-            std::cout << '\n';
+            printFunc(vectorMain);
         } else{
             std::cout << "\nInvalid input. Please enter 1-2\n\n";
         }
